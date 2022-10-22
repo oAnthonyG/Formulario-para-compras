@@ -30,17 +30,10 @@ body {
   width: 550px;
 }
 
-.space {
-  margin-bottom: 16px;
-}
-
-.space-md {
-  margin-bottom: 32px;
-}
-
 .label {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
+  margin-bottom: 0.8rem;
 }
 
 .header {
@@ -77,12 +70,84 @@ body {
 
 .fieldset {
   padding: 0 32px;
+  margin: 2rem 0;
+  border: none;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #2F3676;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #191847;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #2F3676;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+.counter{
+  display: flex;
 }
 
 .counter svg {
+  cursor: pointer;
   fill: #2f3676;
 }
-
+.counter svg:hover{
+  fill: #191847;
+}
 .counter input {
   background: #dde3e9;
   border: 1px solid #2f3676;
@@ -91,6 +156,12 @@ body {
   font-weight: bold;
   margin: 0 8px;
   width: 60px;
+}
+.counter__number{
+  text-align: center;
+}
+.counter__number::placeholder{ 
+  text-align: center;
 }
 
 .footer {
@@ -111,10 +182,15 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   padding: 8px 32px;
+  cursor: pointer;
 }
 
-.footer button:focus,
 .footer button:hover {
   border: 2px solid #2f3676;
   background: #191847;
+}
+.footer button:active{
+  color: #555555;
+  background-color: #C5CFD6;
+  border: 2px solid #555555;
 }
