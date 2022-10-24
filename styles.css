@@ -124,7 +124,12 @@ body {
   display: none;
 }
 
-
+.error{
+  background-color: #F59393;
+}
+.msg-error{
+  display: none
+}
 .container input:checked ~ .checkmark:after {
   display: block;
 }

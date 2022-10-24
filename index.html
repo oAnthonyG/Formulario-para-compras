@@ -12,19 +12,20 @@
 		<header class="header">
 			<div class="title">Formulário<br />para compra de<br /><span>Pacote de Stickers</span></div>
 		</header>
-		<form class="form">
+		<form class="form" onsubmit="return validate()">
 			<fieldset class="fieldset">
 
 				<legend class="label">Quais stickers:</legend>
-				<label class="container">Ract
-					<input type="checkbox" checked="checked"/>
+				<label class="container">React
+					<input id="react" type="checkbox" />
 					<span class="checkmark"></span></label>
 				<label class="container">Vue
-					<input type="checkbox" />
+					<input id="vue" type="checkbox" />
 					<span class="checkmark"></span></label>
 				<label class="container">Angular
-					<input type="checkbox" />
+					<input id="angular" type="checkbox" />
 					<span class="checkmark"></span></label>
+					<p class="msg-error">Escolha um sticker</p>
 			</fieldset>
 			<fieldset class="fieldset">
 				<legend class="label">Quantos stickers de cada?</legend>
@@ -45,7 +46,7 @@
 				<textarea name="descricao" placeholder="Alguma dúvida? Recado?"></textarea>
 			</fieldset>
 			<footer class="footer">
-				<button>Enviar</button>
+				<button type="submit">Enviar</button>
 			</footer>
 		</form>
 	</main>
