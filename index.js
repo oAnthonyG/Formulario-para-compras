@@ -11,6 +11,8 @@ const form = document.querySelector('.form');
 
 function validate() {
   let valid = false;
+  let numInput = document.getElementById('numInput').value
+  
 
   if (document.getElementById('react').checked) {
     valid = true;
@@ -19,17 +21,29 @@ function validate() {
   } else if (document.getElementById('angular').checked) {
     valid = true;
   }
+  
 
   if (valid) {
     span.forEach((stikers)=>{
       stikers.classList.remove('error')
       msgError.style.display='none'
+      
     });
+    
   } else {
     span.forEach((stikers) =>{
       stikers.classList.add('error')
+
     msgError.style.display='block'})
       return false;
+  }
+
+  if(numInput == "0"){
+    num.style.background='#F59393'
+    return false;
+  } else{
+    num.style.background='#dde3e9'
+    return true
   }
 }
 
