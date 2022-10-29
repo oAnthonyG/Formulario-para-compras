@@ -1,7 +1,6 @@
 # Formulario-para-compras
 
-Um desafio que peguei para tentar fazer, quase concluindo usando HTML, CSS e javaScript
-
+Um desafio que peguei no repositorio https://github.com/oAnthonyG/desafio-front-end para treinar meus conhecimentos em HTML, CSS e JavaScript
 
 
 ### Screenshot
