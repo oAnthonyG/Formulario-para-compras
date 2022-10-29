@@ -12,7 +12,7 @@
 		<header class="header">
 			<div class="title">Formulário<br />para compra de<br /><span>Pacote de Stickers</span></div>
 		</header>
-		<form class="form" onsubmit="return validate()">
+		<form class="form" >
 			<fieldset class="fieldset">
 
 				<legend class="label">Quais stickers:</legend>
@@ -46,7 +46,8 @@
 				<textarea name="descricao" placeholder="Alguma dúvida? Recado?"></textarea>
 			</fieldset>
 			<footer class="footer">
-				<button type="submit">Enviar</button>
+				<p id="formText">Formulário enviado com sucesso!</p>
+				<button class="button" type="submit" >Enviar</button>
 			</footer>
 		</form>
 	</main>

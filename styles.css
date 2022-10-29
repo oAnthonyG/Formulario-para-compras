@@ -177,9 +177,13 @@ body {
   padding: 2rem;
   background: #dde3e9;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
-
+.footer p {
+  opacity: 0;
+  font-family: 'Inter';
+  color: #00C57C;
+}
 .footer button {
   appearance: none;
   background: #2f3676;

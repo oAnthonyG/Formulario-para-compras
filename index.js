@@ -1,19 +1,16 @@
 const buttonSub = document.querySelector('.sub');
 const num = document.querySelector('.num');
 const buttonPlus = document.querySelector('.plus');
-
 const msgError = document.querySelector('.msg-error')
-
 const span = document.querySelectorAll('.checkmark')
 
 const form = document.querySelector('.form');
 
+const buttonSubmit = document.querySelector('.button')
 
 function validate() {
   let valid = false;
   let numInput = document.getElementById('numInput').value
-  
-
   if (document.getElementById('react').checked) {
     valid = true;
   } else if (document.getElementById('vue').checked) {
@@ -22,14 +19,11 @@ function validate() {
     valid = true;
   }
   
-
   if (valid) {
     span.forEach((stikers)=>{
       stikers.classList.remove('error')
       msgError.style.display='none'
-      
     });
-    
   } else {
     span.forEach((stikers) =>{
       stikers.classList.add('error')
@@ -37,14 +31,15 @@ function validate() {
     msgError.style.display='block'})
       return false;
   }
-
+  
   if(numInput == "0"){
     num.style.background='#F59393'
     return false;
   } else{
     num.style.background='#dde3e9'
     return true
-  }
+  };
+  
 }
 
 
@@ -61,3 +56,17 @@ buttonSub.addEventListener('click', () => {
   }
 });
 
+
+buttonSubmit.addEventListener('click', (event)=>{
+const formText = document.getElementById('formText')
+
+  event.preventDefault();
+  
+  
+  if(validate() == true){
+    formText.style.opacity='1'
+    setTimeout(function(){
+      window;location.reload();
+    }, 3000);
+  }
+})
