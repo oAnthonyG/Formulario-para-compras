@@ -5,7 +5,6 @@ const msgError = document.querySelector('.msg-error')
 const span = document.querySelectorAll('.checkmark')
 
 const form = document.querySelector('.form');
-
 const buttonSubmit = document.querySelector('.button')
 
 function validate() {
@@ -18,30 +17,29 @@ function validate() {
   } else if (document.getElementById('angular').checked) {
     valid = true;
   }
-  
+
   if (valid) {
-    span.forEach((stikers)=>{
+    span.forEach((stikers) => {
       stikers.classList.remove('error')
-      msgError.style.display='none'
+      msgError.style.display = 'none'
     });
   } else {
-    span.forEach((stikers) =>{
+    span.forEach((stikers) => {
       stikers.classList.add('error')
 
-    msgError.style.display='block'})
-      return false;
-  }
-  
-  if(numInput == "0"){
-    num.style.background='#F59393'
+      msgError.style.display = 'block'
+    })
     return false;
-  } else{
-    num.style.background='#dde3e9'
+  }
+
+  if (numInput == "0") {
+    num.style.background = '#F59393'
+    return false;
+  } else {
+    num.style.background = '#dde3e9'
     return true
   };
-  
 }
-
 
 buttonPlus.addEventListener('click', () => {
   num.value = parseInt(num.value) + 1
@@ -56,17 +54,14 @@ buttonSub.addEventListener('click', () => {
   }
 });
 
-
-buttonSubmit.addEventListener('click', (event)=>{
-const formText = document.getElementById('formText')
-
+buttonSubmit.addEventListener('click', (event) => {
+  const formText = document.getElementById('formText')
   event.preventDefault();
-  
-  
-  if(validate() == true){
-    formText.style.opacity='1'
-    setTimeout(function(){
-      window;location.reload();
+
+  if (validate() == true) {
+    formText.style.opacity = '1'
+    setTimeout(function () {
+      window; location.reload();
     }, 3000);
   }
 })
